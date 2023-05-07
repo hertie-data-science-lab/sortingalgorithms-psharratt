@@ -14,7 +14,7 @@ def recursive_bucket_sort(array, bucket_size=5):
     Sorts an array using a recursive bucket sort algorithm.
     
     Args:
-        array (list): The list of integers to be sorted.
+        array (list): The list of integers and/or floating-points to be sorted.
         bucket_size (int, optional): The size of each bucket. Defaults to 5.
         
     Returns:
@@ -36,10 +36,13 @@ def recursive_bucket_sort(array, bucket_size=5):
     # Insert elements into their respective buckets
     for j in array:
         if isinstance(j, float):
+            # Determine the index of the bucket for floating-point values
             index_b = min(math.floor((j - min_value) / range_size * bucket_size), bucket_size)
         else:
+            # Determine the index of the bucket for integer values
             index_b = int((j - min_value) / range_size)
         buckets[index_b].append(j)
+
 
     # Sort the elements of each bucket recursively
     sorted_buckets = []
@@ -55,6 +58,12 @@ def recursive_bucket_sort(array, bucket_size=5):
 def bucketSort(array):
     bucket = []
     """
+    Args:
+        array (list): The list of integers and/or floating-points to be sorted.
+        
+    Returns:
+        list: A sorted version of the input array.
+        
     Please note: We amended bucketSort() to handle floating-point numbers
     We added math.ceil() to round up and created bucket range sizes with min() and max(). 
     """
