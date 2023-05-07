@@ -5,10 +5,10 @@ Submitted on 7th May 2023
 SUBMISSION ASSIGNMENT 10 
 
 @authors: Fabian Metz | Amin Oueslati | Oskar Krafft | Paul Sharratt
+
 """
 # Imports the required sorting functions from the bucket module
-from bucket_recursive import recursive_bucket_sort
-from bucket import bucketSort
+from recursive_bucket import recursive_bucket_sort
 
 
 # Define an array of mixed data types

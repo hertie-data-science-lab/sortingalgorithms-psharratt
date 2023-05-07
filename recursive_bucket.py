@@ -5,10 +5,9 @@ Submitted on 7th May 2023
 
 SUBMISSION ASSIGNMENT 10 
 
-@authors: Fabian Metz | Paul Sharratt | Amin Oueslati | Oskar Krafft 
+@authors: Fabian Metz | Amin Oueslati | Oskar Krafft | Paul Sharratt
 
 """
-
 
 def recursive_bucket_sort(array, bucket_size=5):
     """
@@ -47,3 +46,5 @@ def recursive_bucket_sort(array, bucket_size=5):
             sorted_buckets.extend(sorted_bucket)
 
     return sorted_buckets
+
+
