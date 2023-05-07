@@ -8,7 +8,7 @@ Fabian Metz | Amin Oueslati | Oskar Krafft | Paul Sharratt
 
 ## Submission notes:
 
-We edited bucket.py to create our recursive algorithm and created main.py to test both the recursive_bucket_sort and bucketSort functions.
+We created bucket_recursive.py for our recursive algorithm and created test.py to test recursive_bucket_sort().
 
 ## Assignment:
 
