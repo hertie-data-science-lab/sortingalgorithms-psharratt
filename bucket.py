@@ -54,7 +54,11 @@ def recursive_bucket_sort(array, bucket_size=5):
 
 def bucketSort(array):
     bucket = []
-    
+    """
+    Please note: We amended bucketSort() to handle floating-point numbers
+    We added math.ceil() to round up and created bucket range sizes with min() and max(). 
+    """
+
     # Find the maximum and minimum values in the array
     max_value = max(array)
     min_value = min(array)
