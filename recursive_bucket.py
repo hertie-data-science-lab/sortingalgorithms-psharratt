@@ -47,4 +47,18 @@ def recursive_bucket_sort(array, bucket_size=5):
 
     return sorted_buckets
 
+"""
+Testing recursive_bucket_sort() on:
+    - an array of mixed data types
+    - array of floating-point values
+    - array specifically for integers
+"""
+array_mixed = [-4, 42, 32, 23, 25, 52, -1.3, 47, 751, 100,0.1,10,0.2]
+array_floats=[0.1,0.11,0.13,0.893,0.2]
+array_ints=[42, 32, 23, 25, 52, 47]
+
+# Use the recursive_bucket_sort function to sort the mixed, float, ints arrays 
+print(recursive_bucket_sort(array_mixed))
+print(recursive_bucket_sort(array_floats)) 
+print(recursive_bucket_sort(array_ints))
 
