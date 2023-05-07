@@ -8,7 +8,7 @@ SUBMISSION ASSIGNMENT 10
 Authors: Fabian Metz | Amin Oueslati | Oskar Krafft | Paul Sharratt
 
 Testing recursive_bucket_sort() on:
-    - random arrays of mixed data types, including negative numbers
+    - random arrays of mixed data types, including negative and repeated values
     - an empty array
 
 """
