@@ -19,6 +19,8 @@ def recursive_bucket_sort(array, bucket_size=5):
         
     Returns:
         list: A sorted version of the input array.
+        
+    Note: Please see test.py for test of this algorithm, in line with modular programming principles.
     """
     if len(array) <= 1:
         return array
@@ -26,6 +28,9 @@ def recursive_bucket_sort(array, bucket_size=5):
     # Find the maximum and minimum values in the array
     max_value = max(array)
     min_value = min(array)
+
+    if max_value == min_value:
+        return array
 
     # Calculate the range for each bucket
     range_size = max_value - min_value
@@ -47,20 +52,3 @@ def recursive_bucket_sort(array, bucket_size=5):
 
     return sorted_buckets
 
-"""
-Testing recursive_bucket_sort() on:
-    - an array of mixed data types
-    - an array of floats
-    - an array of integers
-    - an empty array
-"""
-array_mixed = [-4, 42, 32, 23, 25, 52, -1.3, 47, 751, 100,0.1,10,0.2]
-array_floats = [0.1,0.11,0.13,0.893,0.2]
-array_ints =[42, 32, 23, 25, 52, 47]
-array_empty = []
-
-# Use the recursive_bucket_sort function to sort the mixed, float, ints arrays 
-print(recursive_bucket_sort(array_mixed))
-print(recursive_bucket_sort(array_floats)) 
-print(recursive_bucket_sort(array_ints))
-print(recursive_bucket_sort(array_empty))
