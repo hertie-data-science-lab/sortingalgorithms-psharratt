@@ -1,44 +1,34 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 24 08:53:11 2023
+Submitted on 19th April 2023
 
-@author: Hannah
+SUBMISSION ASSIGNMENT 8 
+
+@authors: Fabian Metz | Amin Oueslati | Oskar Krafft | Paul Sharratt
 """
 
-# Using counting sort to sort the elements in the basis of significant places
-def countingSort(array, place):
-    size = len(array)
-    output = [0] * size
-    count = [0] * 10
+def recursive_radix_sort(arr, exp=1):
+    """
+    Sorts an array of integers using recursive radix sort algorithm.
 
-    # Calculate count of elements
-    for i in range(0, size):
-        index = array[i] // place
-        count[index % 10] += 1
+    :param arr: A list of integers to be sorted.
+    :param exp: The current digit position (default is 1 for the least significant digit).
+    :return: A sorted list of integers.
+    """
+    # Base case: all digits have been processed
+    if not arr or exp > len(str(max(arr))):
+        return arr
 
-    # Calculate cumulative count
-    for i in range(1, 10):
-        count[i] += count[i - 1]
+    # Create 10 empty buckets (0-9)
+    buckets = [[] for _ in range(10)]
 
-    # Place the elements in sorted order
-    i = size - 1
-    while i >= 0:
-        index = array[i] // place
-        output[count[index % 10] - 1] = array[i]
-        count[index % 10] -= 1
-        i -= 1
+    # Iterate through the input data and place each element in the appropriate bucket
+    for num in arr:
+        digit = (num // (10 ** (exp - 1))) % 10
+        buckets[digit].append(num)
 
-    for i in range(0, size):
-        array[i] = output[i]
+    # Recursively sort each bucket using the next digit position
+    sorted_buckets = [recursive_radix_sort(bucket, exp + 1) for bucket in buckets] # THE ERROR IS HERE BUCKETS ARE EMPTY ON RECURSIVE CALL
 
-
-# Main function to implement radix sort
-def radixSort(array):
-    # Get maximum element
-    max_element = max(array)
-
-    # Apply counting sort to sort elements based on place value.
-    place = 1
-    while max_element // place > 0:
-        countingSort(array, place)
-        place *= 10
+    # Concatenate the sorted buckets to form a new sequence
+    return [num for bucket in sorted_buckets for num in bucket]
