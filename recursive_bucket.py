@@ -28,7 +28,8 @@ def recursive_bucket_sort(array, bucket_size=5):
     # Find the maximum and minimum values in the array
     max_value = max(array)
     min_value = min(array)
-
+    
+    # checking if range of values in the input array is zero
     if max_value == min_value:
         return array
 
